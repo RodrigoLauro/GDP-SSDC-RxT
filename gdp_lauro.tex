@@ -52,25 +52,24 @@
 
 
 \begin{table}[ht]
-\label{tab:registro}
 \centering
-\begin{tabularx}{\linewidth}{@{}|c|c|c|@{}}
+\caption{Registros de cambios}
+\label{tab:registro}
+\begin{tabularx}{\linewidth}{|c|X|c|}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-1      & Se completa hasta el punto 5 inclusive                & {8} de {septiembre} de 2025 \\ \hline
-%2      & Se completa hasta el punto 9 inclusive
-%		  Se puede agregar algo más \newline
-%		  En distintas líneas \newline
-%		  Así                                                    & {día} de {mes} de 202X \\ \hline
-%3      & Se completa hasta el punto 12 inclusive                & {día} de {mes} de 202X \\ \hline
-%4      & Se completa el plan	                                 & {día} de {mes} de 202X \\ \hline
-
-% Si hay más correcciones pasada la versión 4 también se deben especificar acá
-
+Revisión & Detalles de los cambios realizados & Fecha \\ \hline
+0 & Creación del documento & 26 de agosto de 2025 \\ \hline
+1 & Se completa hasta el punto 5 inclusive & 8 de septiembre de 2025 \\ \hline
+%2 & Se completa hasta el punto 9 inclusive \newline
+%   Se puede agregar algo más \newline
+%   En distintas líneas \newline
+%   Así & {día} de {mes} de 202X \\ \hline
+%3 & Se completa hasta el punto 12 inclusive & {día} de {mes} de 202X \\ \hline
+%4 & Se completa el plan & {día} de {mes} de 202X \\ \hline
 \end{tabularx}
 \end{table}
+\pagebreak
 
 \pagebreak
 
@@ -85,7 +84,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en  la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de U\$S 45.000,00 , con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en la implementación de un sistema de soporte a la decisión clínica basado en técnicas de aprendizaje automático. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de U\$S 45.000,00 , con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -107,7 +106,7 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 
-Este proyecto tiene por objetivo ser una herramienta para la detección de patologías pulmonares, basado en rayos X. El mismo se desarrolla en conjunto con el Hospital de Clínicas , responde a una propuesta personal donde se buscó como objetivo principal generar un impacto en la sociedad. En adelante, nos referiremos a esta solución como SSDC-RxT (Sistema de Soporte a la Decisión Clínica para Radiografías de Tórax).
+Este proyecto tiene por objetivo ser una herramienta para la detección de patologías pulmonares, basado en rayos X. El mismo se desarrolla en conjunto con el Hospital de Clínicas, responde a una propuesta personal donde se buscó como objetivo principal generar un impacto en la sociedad. En adelante, esta solución se denominará SSDC-RxT (Sistema de Soporte a la Decisión Clínica para Radiografías de Tórax). 
 
 El hospital de clínicas realiza placas de rayos X de torax en todos los pacientes que ingresan, es un procedimiento de rutina. La intención de este proyecto es brindar una herramienta que permita detectar patologías pulmonares (como neumonía, tuberculosis, derrame pleural, cardiomegalia y lesiones pulmonares o mediastinales)  de manera prematura, ya que muchas de esas radiografías no terminan pasando por un experto que pudiera analizarlas. 
 
@@ -116,18 +115,18 @@ De esta manera se estaría generando un fuerte impacto en sectores de la socieda
 Este desarrollo se integra como una instancia automática dentro del proceso de admisión. No suma carga operativa: en segundos ofrece un apoyo al médico de guardia y admisión con indicios tempranos y priorización de radiografías potencialmente anómalas, para facilitar decisiones más rápidas. La innovación radica en incorporar soporte diagnóstico temprano directamente en el flujo de trabajo del hospital, como complemento no reemplazo del criterio del especialista.
 
 
-En la Figura 1 se presenta el diagrama en bloques de la solución propuesta. Se observa el flujo completo desde la admisión del paciente y la adquisición de la radiografía, pasando por el preprocesamiento y la clasificación automática mediante IA, hasta la priorización y generación de un reporte breve/alerta para el médico de guardia o especialista.
+En la figura 1 se presenta el diagrama en bloques de la solución propuesta. Se observa el flujo completo desde la admisión del paciente y la adquisición de la radiografía, pasando por el preprocesamiento y la clasificación automática mediante IA, hasta la priorización y generación de un reporte breve/alerta para el médico de guardia o especialista.
  
-
+\vspace{25px}
 \begin{figure}[htpb]
 \centering 
 \includegraphics[width=.65\textwidth]{./Figuras/diagBloques.pdf}
-\caption{Diagrama en bloques del SSDC-RxT (sistema propuesto)}
+\caption{Diagrama en bloques del SSDC-RxT (sistema propuesto).}
 \label{fig:diagBloques}
 \end{figure}
 
 \vspace{25px}
-
+\pagebreak
 
 
 
@@ -146,13 +145,13 @@ Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
 Cliente       &\clientename      &\empclientename	&       	\\ \hline
 Responsable   &\authorname       & FIUBA        	& Alumno 	\\ \hline
 Orientador    &\supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Usuario final & Prof. medicos     &\empclientename	&        	\\ \hline
+Usuario final & Prof. médicos     &\empclientename	&        	\\ \hline
 \end{tabularx}
 \end{table}
 
 
 \begin{itemize}
-	\item Cliente: el Dr. Martin Drago es experto en la temática y va a ayudar con la creacion d eun equipo de etiquetado de las patologías.
+	\item Cliente: el Dr. Martin Drago es experto en la temática y va a ayudar con la creación de un equipo de etiquetado de las patologías.
 \end{itemize}
 
 
@@ -169,7 +168,7 @@ Impactar positivamente en la atención,en especial de pacientes de sectores más
 
 El proyecto incluye:
 \begin{itemize}
-  \item \textbf{Plataforma de etiquetado (Portal de especialistas).}
+  \item \textbf{Plataforma de etiquetado (portal de especialistas).}
     \begin{itemize}
       \item Gestión de usuarios (médicos/radiólogos) y trazabilidad.
       \item Carga/visualización de Rx (DICOM/JPG) con desidentificación.
@@ -229,6 +228,9 @@ El proyecto se apoya en los siguientes supuestos:
       \item Posibilidad de exportar desde PACS/RIS y de desidentificar los estudios antes de su uso.
       \item Disponibilidad de metadatos clínicos básicos (p.\,ej., proyección PA/AP, sexo, edad aproximada) cuando sea pertinente y permitido.
     \end{itemize}
+
+    \pagebreak
+    
   \item \textbf{Etiquetado por expertos.}
     \begin{itemize}
       \item Participación de médicos/radiólogos del Hospital de Clínicas como \emph{gold standard} para el etiquetado.
@@ -244,7 +246,7 @@ El proyecto se apoya en los siguientes supuestos:
       \item Aceptación del flujo de trabajo propuesto (alertas/priorización) sin cambios mayores en protocolos asistenciales.
       \item Respaldo de jefaturas/gestión para ejecutar el piloto en el ámbito acordado.
     \end{itemize}
-  \item \textbf{Condiciones de proyecto.}
+  
 \end{itemize}
 
  \pagebreak
