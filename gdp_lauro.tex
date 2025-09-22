@@ -61,7 +61,8 @@
 Revisión & Detalles de los cambios realizados & Fecha \\ \hline
 0 & Creación del documento & 26 de agosto de 2025 \\ \hline
 1 & Se completa hasta el punto 5 inclusive & 8 de septiembre de 2025 \\ \hline
-%2 & Se completa hasta el punto 9 inclusive \newline
+2 & Se completa hasta el punto 9 inclusive & 15 de septiembre de 2025 \\ \hline
+3 & Se completa hasta el punto 12 inclusive & 22 de septiembre de 2025 \\ \hline
 %   Se puede agregar algo más \newline
 %   En distintas líneas \newline
 %   Así & {día} de {mes} de 202X \\ \hline
@@ -120,7 +121,7 @@ En la figura 1 se presenta el diagrama en bloques de la solución propuesta. Se 
 \vspace{25px}
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.pdf}
+\includegraphics[width=1.1\textwidth]{./Figuras/diagBloques.pdf}
 \caption{Diagrama en bloques del SSDC-RxT (sistema propuesto).}
 \label{fig:diagBloques}
 \end{figure}
@@ -143,7 +144,7 @@ En la figura 1 se presenta el diagrama en bloques de la solución propuesta. Se 
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
 Cliente       &\clientename      &\empclientename	&       	\\ \hline
-Responsable   &\authorname       & FIUBA        	& Alumno 	\\ \hline
+Responsable   &\authorname       & FIUBA        	& Ing. Lauro 	\\ \hline
 Orientador    &\supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
 Usuario final & Prof. médicos     &\empclientename	&        	\\ \hline
 \end{tabularx}
@@ -160,7 +161,7 @@ Usuario final & Prof. médicos     &\empclientename	&        	\\ \hline
 \label{sec:proposito}
 
  
-Impactar positivamente en la atención,en especial de pacientes de sectores más vulnerables, ofreciendo soporte de  diagnóstico temprano en radiografías de tórax. La solución prioriza automáticamente estudios con hallazgos sospechosos y entrega reportes breves a los médicos, acelerando decisiones, mejorando la detección precoz y optimizando recursos sin sumar carga operativa.
+Impactar positivamente en la atención, en especial de pacientes de sectores más vulnerables, ofreciendo soporte de  diagnóstico temprano en radiografías de tórax. La solución prioriza automáticamente estudios con hallazgos sospechosos y entrega reportes breves a los médicos, acelerando decisiones, mejorando la detección precoz y optimizando recursos sin sumar carga operativa.
  
 
 \section{4. Alcance del proyecto}
@@ -249,299 +250,373 @@ El proyecto se apoya en los siguientes supuestos:
   
 \end{itemize}
 
- \pagebreak
-
-\section{6. Requerimientos}
-\label{sec:requerimientos}
-
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-Los requerimientos deben enumerarse y de ser posible estar agrupados por afinidad, por ejemplo:
-
-\begin{enumerate}
-	\item Requerimientos funcionales:
-		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
-		\end{enumerate}
-	\item Requerimientos de documentación:
-		\begin{enumerate}
-			\item Requerimiento 1.
-			\item Requerimiento 2 (prioridad menor)
-		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
-\end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-\textbf{¡¡¡No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!}
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-
-\section{7. Historias de usuarios (\textit{Product backlog})}
+\section{6. Product Backlog}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: en esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+\subsection*{Épica 1 – Gestión y etiquetado de radiografías}
 
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia.
+\textbf{HU1}  
+Como especialista, quiero cargar radiografías de tórax en el sistema para poder etiquetarlas con patologías relevantes.  
+\\Dificultad: 3, Complejidad: 3, Incertidumbre: 2 → Suma: 8 → \textbf{Story Points: 8}  
+Prioridad: Alta  
 
-El formato propuesto es: 
-\begin{enumerate}
-\item ``Como [rol] quiero [tal cosa] para [tal otra cosa]."
+\textbf{HU2}  
+Como especialista, quiero registrar múltiples etiquetas por cada radiografía para reflejar la presencia de más de una patología.  
+\\Dificultad: 5, Complejidad: 3, Incertidumbre: 5 → Suma: 10 → \textbf{Story Points: 13}  
+Prioridad: Alta  
 
-\textit{Story points}: 8 (complejidad: 3, dificultad: 2, incertidumbre: 3)
-\end{enumerate}
-\end{consigna}
+\subsection*{Épica 2 – Entrenamiento y validación del modelo IA}
 
-\section{8. Entregables principales del proyecto}
-\label{sec:entregables}
+\textbf{HU3}  
+Como desarrollador, quiero entrenar un modelo de clasificación multiclase con las radiografías etiquetadas para detectar patologías pulmonares de forma automática.  
+\\Dificultad: 5, Complejidad: 5, Incertidumbre: 3 → Suma: 13 → \textbf{Story Points: 13}  
+Prioridad: Alta  
 
-\begin{consigna}{red}
-Los entregables del proyecto son (ejemplo):
+\textbf{HU4}  
+Como desarrollador, quiero validar el modelo con un conjunto de datos separado para asegurar que los resultados sean confiables.  
+\\Dificultad: 3, Complejidad: 3, Incertidumbre: 2 → Suma: 8 → \textbf{Story Points: 8}  
+Prioridad: Alta  
 
+\subsection*{Épica 3 – Portal clínico de soporte al diagnóstico}
+
+\textbf{HU5}  
+Como médico de guardia, quiero subir una radiografía de un paciente para recibir un resultado automático que me ayude en la admisión.  
+\\Dificultad: 5, Complejidad: 3, Incertidumbre: 3 → Suma: 11 → \textbf{Story Points: 13}  
+Prioridad: Alta  
+
+\textbf{HU6}  
+Como médico de guardia, quiero que el sistema me muestre un nivel de confianza y prioridad de cada caso para tomar decisiones más rápidas.  
+\\Dificultad: 5, Complejidad: 5, Incertidumbre: 3 → Suma: 13 → \textbf{Story Points: 13}  
+Prioridad: Alta  
+
+\subsection*{Épica 4 – Infraestructura y seguridad del sistema}
+
+\textbf{HU7}  
+Como administrador, quiero que el sistema funcione en un servidor seguro para garantizar el resguardo de datos médicos.  
+\\Dificultad: 3, Complejidad: 4, Incertidumbre: 3 → Suma: 10 → \textbf{Story Points: 13}  
+Prioridad: Alta  
+
+\textbf{HU8}  
+Como administrador, quiero que los accesos estén diferenciados por roles para asegurar que solo los usuarios autorizados utilicen el sistema.  
+\\Dificultad: 3, Complejidad: 3, Incertidumbre: 2 → Suma: 8 → \textbf{Story Points: 8}  
+Prioridad: Alta  
+
+
+\section{7. Criterios de aceptación de historias de usuario}
+\label{sec:criteriosAceptacion}
+
+\section{Criterios de aceptación}
+
+\subsection*{Épica 1 – Gestión y etiquetado de radiografías}
+
+\textbf{Criterios de aceptación HU1} (Carga de Rx para etiquetar)
 \begin{itemize}
-	\item Manual de usuario.
-	\item Diagrama de circuitos esquemáticos.
-	\item Código fuente del firmware.
-	\item Diagrama de instalación.
-	\item Memoria del trabajo final.
-	\item etc...
+  \item Se permite cargar archivos DICOM/JPG válidos y de tamaño controlado.
+  \item Al finalizar la carga, el estudio queda disponible en el listado de “Pendientes de etiquetar”.
+  \item Se almacenan los archivos de manera desidentificada y con registro de auditoría.
 \end{itemize}
-\end{consigna}
+
+\textbf{Criterios de aceptación HU2} (Etiquetado multicategoría)
+\begin{itemize}
+  \item Es posible asignar múltiples etiquetas por estudio en una sola acción.
+  \item Las etiquetas aplicadas se muestran de forma clara en la interfaz y cambian el estado a “Etiquetada”.
+  \item Se conserva el historial de etiquetas y, cuando corresponde, se registra la concordancia entre lectores.
+\end{itemize}
+
+\subsection*{Épica 2 – Entrenamiento y validación del modelo IA}
+
+\textbf{Criterios de aceptación HU3} (Entrenar modelo multiclase)
+\begin{itemize}
+  \item Se separan previamente los datos en conjuntos de entrenamiento, validación y prueba.
+  \item El modelo se entrena únicamente con el conjunto de entrenamiento (usando validación para ajuste de hiperparámetros).
+  \item Se genera un artefacto de modelo versionado y exportable.
+  \item Se produce un reporte automático con métricas del entrenamiento (curvas ROC, matriz de confusión en validación).
+\end{itemize}
+
+\textbf{Criterios de aceptación HU4} (Validación con conjunto separado)
+\begin{itemize}
+  \item La evaluación se realiza exclusivamente sobre este conjunto, generando métricas por clase y globales (AUC, sensibilidad, especificidad, F1).
+  \item Los resultados alcanzan al menos los umbrales mínimos establecidos en la fase de Evaluación de CRISP-DM (ej.: AUC macro ≥ 0,85; sensibilidad por clase ≥ 0,75).
+  \item Se cumplen umbrales mínimos definidos (ej. AUC macro ≥ 0,85).
+\end{itemize}
+
+
+
+\subsection*{Épica 3 – Portal clínico de soporte al diagnóstico}
+
+\textbf{Criterios de aceptación HU5} (Subir Rx y obtener resultado)
+\begin{itemize}
+  \item El usuario puede subir una Rx y obtener predicciones en menos de 10 segundos.
+  \item La interfaz indica claramente el estado de procesamiento y el resultado final.
+  \item Cada ejecución queda registrada con usuario, fecha y resultado.
+\end{itemize}
+
+\textbf{Criterios de aceptación HU6} (Confianza y priorización)
+\begin{itemize}
+  \item El sistema muestra el nivel de confianza de cada predicción.
+  \item Los casos se ordenan según prioridad y se resaltan con un código visual.
+  \item Se mantienen configurables los umbrales que determinan las prioridades.
+\end{itemize}
+
+\subsection*{Épica 4 – Infraestructura y seguridad del sistema}
+
+\textbf{Criterios de aceptación HU7} (Servidor seguro)
+\begin{itemize}
+  \item El sistema está desplegado en un servidor/VM con acceso restringido y comunicaciones cifradas mediante TLS 1.3.
+  \item Existe una página de estado con la versión del modelo y disponibilidad del servicio.
+  \item Los datos y modelos se almacenan con cifrado AES-256 en reposo y claves gestionadas de forma segura.
+  \item Se ejecutan backups diarios automáticos, validados con checksums (SHA-256) y verificados mediante pruebas de restauración periódicas bajo la regla 3-2-1.
+\end{itemize}
+
+
+
+\textbf{Criterios de aceptación HU8} (Accesos por roles)
+\begin{itemize}
+  \item Se definen roles diferenciados (administrador, especialista, médico) con permisos específicos.
+  \item La interfaz se adapta a cada rol mostrando solo las opciones disponibles.
+  \item El sistema registra los intentos de acceso y bloquea tras varios fallidos.
+\end{itemize}
+
+
+\section{8. Fases de CRISP-DM}
+
+\subsection*{1. Comprensión del negocio}
+\begin{itemize}
+  \item \textbf{Objetivo:} priorizar tempranamente radiografías de tórax con hallazgos sospechosos para asistir la decisión clínica en admisión/guardia.
+  \item \textbf{Valor agregado:} Reducción del tiempo hasta la atención de casos críticos; soporte sistemático y trazable sin aumentar carga operativa.
+  \item \textbf{Métricas de éxito (negocio):} 
+    \begin{itemize}
+      \item TTR (time-to-review) de placas prioritarias: reducción \(\geq\) 30\%.
+      \item \% de casos críticos correctamente priorizados: \(\geq\) 85\%.
+      \item Adopción por parte de médicos de guardia: \(\geq\) 70\% en piloto.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{2. Comprensión de los datos}
+\begin{itemize}
+  \item \textbf{Tipo:} Imágenes Rx de tórax (DICOM/JPG), metadatos (proyección PA/AP, sexo, edad aprox. cuando esté permitido).
+  \item \textbf{Origen:} Hospital de Clínicas (PACS/RIS). Etiquetas provistas por especialistas del hospital.
+  \item \textbf{Cantidad esperada:} Centenares a miles de estudios para piloto (balance por clase a verificar).
+  \item \textbf{Calidad:} Variabilidad de equipos y parámetros; posibles artefactos. Se requiere control de calidad y desidentificación.
+\end{itemize}
+
+\subsection*{3. Preparación de los datos}
+\begin{itemize}
+  \item \textbf{Características clave:} Imagen normalizada (tamaño fijo, 1 o 3 canales), proyección conocida, etiquetas multicategoría.
+  \item \textbf{Transformaciones:} 
+    \begin{itemize}
+      \item Desidentificación, control de calidad (descartar estudios inválidos).
+      \item Normalización de intensidades, \textit{resize}/centrado, data augmentation limitado.
+      \item Split estratificado: train/val/test sin fuga de información.
+    \end{itemize}
+\end{itemize}
+
+\subsection*{4. Modelado}
+\begin{itemize}
+  \item \textbf{Tipo de problema:} Clasificación multiclase/multietiqueta de patologías en Rx de tórax con \textbf{scoring} de prioridad.
+  \item \textbf{Algoritmos posibles:} 
+    \begin{itemize}
+      \item CNN con \textit{transfer learning} (p.ej., EfficientNet/ResNet) + \textit{fine-tuning}.
+      \item Clasificadores calibrados para probabilidades (p.ej., \textit{temperature scaling} si aplica).
+    \end{itemize}
+  \item \textbf{Selección/ajuste:} Búsqueda de hiperparámetros, \textit{early stopping}, regularización; versión de modelo registrada.
+\end{itemize}
+
+\subsection*{5. Evaluación del modelo}
+\begin{itemize}
+  \item \textbf{Métricas de rendimiento (técnicas):} AUC por clase y macro, sensibilidad/especificidad por clase, F1 macro, matriz de confusión.
+  \item \textbf{Criterios mínimos (piloto):} AUC macro \(\geq\) 0,85; sensibilidad por clase \(\geq\) 0,75 (valores a consensuar con clínica).
+  \item \textbf{Verificación clínica:} Revisión de falsos positivos/negativos y acuerdo interobservador.
+\end{itemize}
+
+\subsection*{6. Despliegue del modelo (opcional en piloto)}
+\begin{itemize}
+  \item \textbf{Tipo de despliegue:} Servicio de inferencia vía API REST (\textit{container} Docker) en servidor/VM del hospital (on-prem o cloud privada).
+  \item \textbf{Herramientas:} Contenedores, \textit{artifact store} para versión de modelo, \textit{logging}/auditoría y \textit{health-checks}.
+  \item \textbf{Operación del piloto:} Tiempos de respuesta \(\leq\) 10 s, \textit{roll-back} de modelo, umbrales de prioridad configurables.
+\end{itemize}
+
 
 \section{9. Desglose del trabajo en tareas}
-\label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
+A continuación se presenta el desglose de tareas técnicas a partir de las Historias de Usuario (HU) definidas en el Product Backlog (Sección 6). 
+Cada tarea tiene una estimación horaria y prioridad relativa.
 
-\begin{enumerate}
-\item Grupo de tareas 1 (suma h)
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\end{enumerate}
-\item Grupo de tareas 2 (suma h)
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\end{enumerate}
-\item Grupo de tareas 3 (suma h)
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\item Tarea 4 (tantas h)
-	\item Tarea 5 (tantas h)
-	\end{enumerate}
-\end{enumerate}
-
-Cantidad total de horas: tantas.
-
-\textbf{¡Importante!:} la unidad de horas es h y va separada por espacio del número. Es incorrecto escribir ``23hs".
-
-\textbf{Se recomienda que no haya ninguna tarea que lleve más de 40 h.} De ser así se recomienda dividirla en tareas de menor duración.
-
-\end{consigna}
-
-\section{10. Diagrama de Activity On Node}
-\label{sec:AoN}
-
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior.
-
-Una herramienta simple para desarrollar los diagramas es el Draw.io (\url{https://app.diagrams.net/}).
-\href{https://app.diagrams.net}{Draw.io}
-
-
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
-\caption{Diagrama de \textit{Activity on Node}.}
-\label{fig:AoN}
-\end{figure}
-
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semi críticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color.
-
-\end{consigna}
-
-\section{11. Diagrama de Gantt}
-\label{sec:gantt}
-
-\begin{consigna}{red}
-Existen muchos programas y recursos \textit{online} para hacer diagramas de Gantt, entre los cuales destacamos:
-
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. 
-En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-Las fechas pueden ser calculadas utilizando alguna de las herramientas antes citadas. Sin embargo, el siguiente ejemplo
-fue elaborado utilizando 
-\href{https://docs.google.com/spreadsheets/d/1fBz8NhSpc4tkkhz3KjJCbh1nR_ltDkfEcZi4tZXduqs}{esta hoja de cálculo}.
-
-Es importante destacar que el ancho del diagrama estará dado por la longitud del texto utilizado para las tareas 
-(Ejemplo: tarea 1, tarea 2, etcétera) y el valor \textit{x unit}. Para mejorar la apariencia del diagrama, es necesario
-ajustar este valor y, quizás, acortar los nombres de las tareas.
-
-\begin{figure}[htpb]
-  \begin{center}
-    \begin{ganttchart}[
-      time slot unit=day,
-      time slot format=isodate,
-      x unit=0.038cm,
-      y unit title=0.7cm,
-      y unit chart=0.6cm,
-      milestone/.append style={xscale=4}
-      ]{2021-03-05}{2021-12-16}
-      \gantttitlecalendar*{2021-03-05}{2021-12-16}{year} \\
-      \gantttitlecalendar*{2021-03-05}{2021-12-16}{month} \\
-      \ganttgroup{Duración Total}{2021-03-05}{2021-12-16} \\
-      %%%%%%%%%%%%%%%%%Organización
-      \ganttgroup{Organización}{2021-03-05}{2021-04-16} \\
-      \ganttbar{Planificación del proyecto}{2021-03-05}{2021-04-15} \\
-      %%%%%%%%%%%%%%%%%Ejecución
-      \ganttgroup{Ejecución}{2021-04-16}{2021-10-21} \\
-      \ganttbar{Tarea 1}{2021-04-16}{2021-04-29} \\
-      \ganttbar{Tarea 2}{2021-04-30}{2021-05-13} \\
-      \ganttbar{Tarea 3}{2021-05-14}{2021-05-27} \\
-      \ganttbar{Tarea 4}{2021-05-28}{2021-07-12} \\
-      \ganttbar{Tarea 5}{2021-07-13}{2021-08-09} \\
-      \ganttbar{Tarea 6}{2021-08-10}{2021-09-23} \\
-      \ganttbar{Tarea 7}{2021-09-24}{2021-09-30} \\
-      \ganttbar{Tarea 8}{2021-10-01}{2021-10-14} \\
-      \ganttbar{Tarea 9}{2021-10-15}{2021-10-21} \\
-      % %%%%%%%%%%%%%%%%%Finalización
-      \ganttgroup{Finalización}{2021-10-22}{2021-12-16} \\
-      \ganttbar{Memoria v1}{2021-10-22}{2021-11-04} \\
-      \ganttbar{Memoria v2}{2021-11-05}{2021-11-18} \\
-      \ganttbar{Memoria final}{2021-11-19}{2021-12-02} \\
-      % La fecha del siguiente milestone es la fecha en que terminamos la memoria
-      \ganttmilestone{Enviar memoria al director}{2021-12-02} \\
-      \ganttbar{Elaborar la presentación}{2021-12-03}{2021-12-16} \\
-      \ganttmilestone{Ensayo de la presentación}{2021-12-16} \\
-      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \end{ganttchart}
-  \end{center}
-  \caption{Diagrama de gantt de ejemplo}
-  \label{fig:gantt}
-\end{figure}
+\begin{center}
+\begin{tabular}{|l|p{8.5cm}|c|c|}
+\hline
+\textbf{Historia de usuario} & \textbf{Tarea técnica} & \textbf{Estimación} & \textbf{Prioridad} \\
+\hline
+HU1 & Implementar módulo de carga de archivos DICOM/JPG con validación de formato & 7 h & Alta \\
+\hline
+HU1 & Guardar archivos en repositorio desidentificado con registro de auditoría & 8 h & Alta \\
+\hline
+HU1 & Vista de “Pendientes de etiquetar” con paginado y búsqueda & 6 h & Media \\
+\hline
+HU2 & Diseñar interfaz para asignar múltiples etiquetas por estudio & 6 h & Alta \\
+\hline
+HU2 & Persistir etiquetas en base de datos con control de versiones & 7 h & Alta \\
+\hline
+HU2 & Exportar etiquetas a CSV/JSON para entrenamiento del modelo & 5 h & Media \\
+\hline
+HU3 & Configurar pipeline de preprocesamiento (resize, normalización, augmentation) & 8 h & Alta \\
+\hline
+HU3 & Implementar script de entrenamiento inicial con modelo base (ResNet/EfficientNet) & 8 h & Alta \\
+\hline
+HU3 & Registrar hiperparámetros y métricas de entrenamiento (logging) & 6 h & Media \\
+\hline
+HU4 & Dividir dataset en train/val/test de forma estratificada & 5 h & Alta \\
+\hline
+HU4 & Generar reporte automático con métricas (ROC, matriz de confusión, F1) & 7 h & Alta \\
+\hline
+HU5 & Programar endpoint de inferencia para subir Rx y ejecutar modelo & 7 h & Alta \\
+\hline
+HU5 & Desarrollar interfaz web para mostrar resultados al usuario & 6 h & Alta \\
+\hline
+HU5 & Guardar resultados de inferencia en base de datos para auditoría & 6 h & Media \\
+\hline
+HU6 & Implementar cálculo de nivel de confianza de predicción & 6 h & Alta \\
+\hline
+HU6 & Configurar priorización automática con umbrales por clase & 7 h & Alta \\
+\hline
+HU6 & Mostrar ordenamiento visual de estudios según criticidad & 5 h & Media \\
+\hline
+HU7 & Configurar despliegue en servidor/VM con Docker & 8 h & Alta \\
+\hline
+HU7 & Implementar página de estado y health-check del servicio & 6 h & Media \\
+\hline
+HU7 & Automatizar backup inicial de modelos y datos & 6 h & Media \\
+\hline
+HU8 & Definir roles (admin, especialista, médico) y permisos asociados & 7 h & Alta \\
+\hline
+HU8 & Implementar autenticación con sesiones y expiración por inactividad & 7 h & Alta \\
+\hline
+\end{tabular}
+\end{center}
 
 
-\begin{landscape}
-\begin{figure}[htpb]
-\centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt (apaisado).} %Modificar este título acorde.
-\label{fig:diagGantt}
-\end{figure}
 
-\end{landscape}
+ 
 
-\end{consigna}
+\section{10. Planificación de Sprints}
 
-
-\section{12. Presupuesto detallado del proyecto}
-\label{sec:presupuesto}
-
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-Incluir la aclaración de si se emplea como moneda el peso argentino (ARS) o si se usa moneda extranjera (USD, EUR, etc). Si es en moneda extranjera se debe indicar la tasa de conversión respecto a la moneda local en una fecha dada.
-
-\end{consigna}
 
 \begin{table}[htpb]
 \centering
-\begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
+\caption{Planificación de Sprints (600 h estimadas)}
+\begin{tabularx}{\linewidth}{@{}|l|l|X|c|l|c|@{}}
 \hline
-\rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
-   \\ \hline
-\end{tabularx}%
+Sprint & HU o fase & Tarea & Horas & Responsable & \% Completado \\ \hline
+Sprint 0 & Planificación & Definir alcance y cronograma & 10 h & Ing. Lauro & 100\% \\ \hline
+Sprint 0 & Planificación & Reunión con tutor/cliente & 5 h & Ing. Lauro & 50\% \\ \hline
+Sprint 0 & Planificación & Ajuste de entregables y setup inicial & 10 h & Ing. Lauro & 25\% \\ \hline
+Sprint 1 & HU1 & Implementar módulo de carga DICOM/JPG & 10 h & Ing. Lauro & 0\% \\ \hline
+Sprint 1 & HU1 & Guardar archivos desidentificados con auditoría & 10 h & Ing. Lauro & 0\% \\ \hline
+Sprint 1 & HU1 & Vista de “Pendientes de etiquetar” & 8 h & Ing. Lauro & 0\% \\ \hline
+Sprint 2 & HU2 & Diseñar interfaz para múltiples etiquetas & 12 h & Ing. Lauro & 0\% \\ \hline
+Sprint 2 & HU2 & Persistir etiquetas con control de versiones & 10 h & Ing. Lauro & 0\% \\ \hline
+Sprint 2 & HU2 & Exportar etiquetas a CSV/JSON & 8 h & Ing. Lauro & 0\% \\ \hline
+Sprint 3 & HU3 & Pipeline de preprocesamiento (resize, normalización, augmentation) & 15 h & Ing. Lauro & 0\% \\ \hline
+Sprint 3 & HU3 & Script de entrenamiento inicial (ResNet/EfficientNet) & 20 h & Ing. Lauro & 0\% \\ \hline
+Sprint 3 & HU3 & Registrar hiperparámetros y métricas de entrenamiento & 10 h & Ing. Lauro & 0\% \\ \hline
+Sprint 4 & HU4 & Split estratificado train/val/test & 8 h & Ing. Lauro & 0\% \\ \hline
+Sprint 4 & HU4 & Generar reporte automático de métricas (ROC, F1, confusión) & 15 h & Ing. Lauro & 0\% \\ \hline
+Sprint 4 & HU4 & Tablero descargable con métricas por clase y macro & 12 h & Ing. Lauro & 0\% \\ \hline
+\end{tabularx}
 \end{table}
+
+
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\linewidth}{@{}|l|l|X|c|l|c|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0}
+Sprint & HU o fase & Tarea & Horas & Responsable & \% Completado \\ \hline
+Sprint 5 & HU5 & Endpoint de inferencia para subir Rx y ejecutar modelo & 15 h & Ing. Lauro & 0\% \\ \hline
+Sprint 5 & HU5 & Interfaz web para mostrar resultados al usuario & 12 h & Ing. Lauro & 0\% \\ \hline
+Sprint 5 & HU5 & Guardar resultados de inferencia en base de datos & 10 h & Ing. Lauro & 0\% \\ \hline
+Sprint 6 & HU6 & Cálculo de nivel de confianza de predicción & 12 h & Ing. Lauro & 0\% \\ \hline
+Sprint 6 & HU6 & Priorización automática con umbrales por clase & 15 h & Ing. Lauro & 0\% \\ \hline
+Sprint 6 & HU6 & Mostrar ordenamiento visual de estudios según criticidad & 10 h & Ing. Lauro & 0\% \\ \hline
+Sprint 7 & HU7 & Configurar despliegue en servidor/VM con Docker & 15 h & Ing. Lauro & 0\% \\ \hline
+Sprint 7 & HU7 & Página de estado y health-check del servicio & 10 h & Ing. Lauro & 0\% \\ \hline
+Sprint 7 & HU7 & Automatizar backups diarios y verificación de restore & 12 h & Ing. Lauro & 0\% \\ \hline
+Sprint 8 & HU8 & Definir roles (admin, especialista, médico) y permisos & 12 h & Ing. Lauro & 0\% \\ \hline
+Sprint 8 & HU8 & Autenticación con sesiones y expiración por inactividad & 12 h & Ing. Lauro & 0\% \\ \hline
+Sprint 8 & HU8 & Bloqueo tras intentos fallidos y auditoría de accesos & 10 h & Ing. Lauro & 0\% \\ \hline
+Sprint 9 & Pruebas & Pruebas integradas de HU1–HU8 & 20 h & Ing. Lauro & 0\% \\ \hline
+Sprint 9 & Pruebas & Corrección de errores y ajustes funcionales & 20 h & Ing. Lauro & 0\% \\ \hline
+Sprint 9 & Documentación & Documentación técnica de módulos implementados & 15 h & Ing. Lauro & 0\% \\ \hline
+\end{tabularx}
+\end{table}
+
+
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\linewidth}{@{}|l|l|X|c|l|c|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0}
+Sprint & HU o fase & Tarea & Horas & Responsable & \% Completado \\ \hline
+Sprint 10 & Escritura & Redacción memoria: capítulos introductorios y estado del arte & 30 h & Ing. Lauro & 0\% \\ \hline
+Sprint 10 & Escritura & Redacción memoria: desarrollo, resultados y conclusiones & 40 h & Ing. Lauro & 0\% \\ \hline
+Sprint 10 & Defensa & Preparación de la exposición y práctica de defensa & 20 h & Ing. Lauro & 0\% \\ \hline
+\end{tabularx}
+\end{table}
+
+
+
+
+
+\section{11. Diagrama de Gantt (sprints)}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[angle=90,width=0.95\linewidth]{gantt.pdf}
+    \label{fig:gantt}
+\end{figure}
+
+
+
+
+
+\section{12. Normativa y cumplimiento de datos (gobernanza)}
+
+
+Los datos empleados en este proyecto consisten en radiografías de tórax de pacientes atendidos en el Hospital de Clínicas. Al tratarse de \textbf{imágenes médicas vinculadas a información de salud}, están sujetos a normativas nacionales e internacionales sobre privacidad y protección de datos.  
+
+\subsection*{Normativas aplicables}
+\begin{itemize}
+    \item \textbf{Ley 25.326 de Protección de Datos Personales (Argentina)}: regula el tratamiento de datos sensibles, entre ellos los vinculados a la salud. Establece la obligación de anonimizar la información y de contar con consentimiento informado o autorización institucional para su uso.
+    \item \textbf{GDPR (Unión Europea)}: aunque no aplica directamente, se toma como referencia de buenas prácticas por su estándar internacional. Requiere principios de licitud, minimización y limitación de la finalidad.
+    \item \textbf{HIPAA (EE.UU.)}: normativa relevante para proyectos que involucren intercambio internacional de datos médicos. Se contempla como marco de referencia.
+\end{itemize}
+
+\subsection*{Condiciones de uso de los datos}
+\begin{itemize}
+    \item El acceso a las radiografías se encuentra regulado y autorizado institucionalmente.
+    \item Las imágenes se emplean \textbf{únicamente con fines académicos} y de investigación, sin propósitos comerciales.
+    \item Previo a su uso, los datos son \textbf{desidentificados} (eliminación de nombres, DNI, historia clínica u otros identificadores).
+    \item No se comparten públicamente las imágenes originales: sólo se utiliza un subconjunto con autorización expresa del Hospital, y en los informes se publican métricas y resultados agregados.
+\end{itemize}
+
+\subsection*{Restricciones y consideraciones}
+\begin{itemize}
+    \item Cualquier publicación derivada del proyecto (artículos, memoria académica, presentaciones) incluirá únicamente datos anonimizados y resultados estadísticos.
+    \item No se almacenan identificadores personales en las bases de datos del proyecto.
+    \item Se asume que el Hospital de Clínicas garantiza el marco legal del consentimiento de los pacientes al momento de generar las imágenes.
+\end{itemize}
+
+\subsection*{Gobernanza y viabilidad}
+\begin{itemize}
+    \item Se adopta un esquema de \textbf{gobernanza de datos} donde el Hospital de Clínicas es el custodio de la información y el equipo académico es usuario autorizado.
+    \item Se aplican medidas de seguridad técnicas (cifrado en reposo y en tránsito, control de accesos) y organizativas (roles definidos, auditoría).
+    \item Desde el punto de vista legal y ético, el proyecto resulta viable siempre que se mantenga la desidentificación estricta, la trazabilidad del uso de datos y la confidencialidad.
+\end{itemize}
+
 
 
 \section{13. Gestión de riesgos}
@@ -614,46 +689,93 @@ Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de
 
 \end{consigna}
 
+\section{14. Sprint Review}
+\label{sec:sprint_review}
 
-\section{14. Gestión de la calidad}
-\label{sec:calidad}
+La revisión de sprint (\emph{Sprint Review}) es una práctica fundamental en metodologías ágiles. Consiste en revisar y evaluar lo que se ha completado al finalizar un sprint. En esta instancia, se presentan los avances y se verifica si las funcionalidades cumplen con los criterios de aceptación establecidos. También se identifican entregables parciales y se consideran ajustes si es necesario.
 
-\begin{consigna}{red}
-Elija al menos diez requerimientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
+Aunque el proyecto aún se encuentre en etapa de planificación, esta sección permite proyectar cómo se evaluarán las funcionalidades más importantes del backlog. Esta mirada anticipada favorece la planificación enfocada en valor y permite reflexionar sobre posibles obstáculos.
 
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento con su correspondiente número.
+\textbf{Objetivo:} anticipar cómo se evaluará el avance del proyecto a medida que se desarrollen las funcionalidades, utilizando como base al menos cuatro historias de usuario del \emph{Product Backlog}.
+
+
+Seleccionar al menos 4 HU del Product Backlog. Para cada una, completar la siguiente tabla de revisión proyectada:
+
+\textbf{Formato sugerido:}
+\begin{table}[htpb]
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|>{\raggedright\arraybackslash}m{2.4cm}|
+                >{\raggedright\arraybackslash}m{2.3cm}|
+                >{\raggedright\arraybackslash}m{3cm}|
+                >{\raggedright\arraybackslash}m{3cm}|
+                >{\raggedright\arraybackslash}m{3cm}|}
+\hline
+\rowcolor[HTML]{CCCCCC}
+\textbf{HU seleccionada} & \textbf{Tareas asociadas} & \textbf{Entregable esperado} & \textbf{¿Cómo sabrás que está cumplida?} & \textbf{Observaciones o riesgos} \\
+\hline
+                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
+\multirow{-2}{=}{HU1}    & Tarea 2 & \multirow{-2}{=}{Módulo funcional} & \multirow{-2}{=}{Cumple criterios de aceptación definidos} & \multirow{-2}{=}{Falta validar con el tutor} \\
+\hline
+                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
+\multirow{-2}{=}{HU3}    & Tarea 2 & \multirow{-2}{=}{Reporte generado} & \multirow{-2}{=}{Exportación disponible y clara} & \multirow{-2}{=}{Requiere datos reales} \\
+\hline
+                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
+\multirow{-2}{=}{HU5}    & Tarea 2 & \multirow{-2}{=}{Panel de gestión} & \multirow{-2}{=}{Roles diferenciados operativos} & \multirow{-2}{=}{Riesgo en integración} \\
+\hline
+                         & Tarea 1 &                             &                                           &                                     \\ \cline{2-2}
+\multirow{-2}{=}{HU7}    & Tarea 2 & \multirow{-2}{=}{Informe trimestral} & \multirow{-2}{=}{PDF con gráficos y evolución} & \multirow{-2}{=}{Puede faltar tiempo para ajustes} \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{15. Sprint Retrospective}    
+\label{sec:sprint_retro}
+
+La retrospectiva de sprint es una práctica orientada a la mejora continua. Al finalizar un sprint, el equipo (o el Ing. Lauro, si trabaja de forma individual) reflexiona sobre lo que funcionó bien, lo que puede mejorarse y qué acciones concretas pueden implementarse para trabajar mejor en el futuro.
+
+Durante la cursada se propuso el uso de la \textbf{Estrella de la Retrospectiva}, que organiza la reflexión en torno a cinco ejes:
 
 \begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar.
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar. 
+\item  ¿Qué hacer más?
+\item  ¿Qué hacer menos?
+\item  ¿Qué mantener?
+\item  ¿Qué empezar a hacer?
+\item  ¿Qué dejar de hacer?
 \end{itemize}
 
-\end{itemize}
+Aun en una etapa temprana, esta herramienta permite que el Ing. Lauro planifique su forma de trabajar, identifique anticipadamente posibles dificultades y diseñe estrategias de organización personal.
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  
+\textbf{Objetivo:} reflexionar sobre las condiciones iniciales del proyecto, identificando fortalezas, posibles dificultades y estrategias de mejora, incluso antes del inicio del desarrollo.
 
-Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  
 
-En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
+Completar la siguiente tabla tomando como referencia los cinco ejes de la Estrella de la Retrospectiva (\emph{Starfish} o estrella de mar). Esta instancia te ayudará a definir buenas prácticas desde el inicio y prepararte para enfrentar el trabajo de forma organizada y flexible. Se deberá completar la tabla al menos para 3 sprints técnicos y 1 no técnico.
 
-\end{consigna}
+\textbf{Formato sugerido:}
 
-\section{15. Procesos de cierre}    
-\label{sec:cierre}
+\begin{table}[htpb]
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{1.8cm}|
+                >{\raggedright\arraybackslash}p{2.3cm}|
+                >{\raggedright\arraybackslash}p{2.3cm}|
+                >{\raggedright\arraybackslash}p{2.3cm}|
+                >{\raggedright\arraybackslash}p{2.3cm}|
+                >{\raggedright\arraybackslash}p{2.3cm}|}
+\hline
+\rowcolor[HTML]{CCCCCC} 
+\textbf{Sprint tipo y N°} & \textbf{¿Qué hacer más?} & \textbf{¿Qué hacer menos?} & \textbf{¿Qué mantener?} & \textbf{¿Qué empezar a hacer?} & \textbf{¿Qué dejar de hacer?} \\
+\hline
+Sprint técnico - 1 & Validaciones continuas con el Ing. Lauro & Cambios sin versión registrada & Pruebas con datos simulados & Documentar cambios propuestos & Ajustes sin análisis de impacto \\
+\hline
+Sprint técnico - 2 & Verificar configuraciones en múltiples escenarios & Modificar parámetros sin guardar historial & Perfiles reutilizables & Usar logs para configuración & Repetir pruebas manuales innecesarias \\
+\hline
+Sprint técnico - 8 & Comparar correlaciones con casos previos & Cambiar parámetros sin justificar & Revisión cruzada de métricas & Anotar configuraciones usadas & Trabajar sin respaldo de datos \\
+\hline
+Sprint no técnico - 12 (por ej.: ``Defensa'') & Ensayos orales con feedback & Cambiar contenidos en la memoria & Material visual claro & Dividir la presentación por bloques & Agregar gráficos difíciles de explicar \\
+\hline
+\end{tabular}
+\end{table}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
 
-\begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:\\
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, los problemas que surgieron y cómo se solucionaron:\\
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:\\
-	  - Indicar esto y quién financiará los gastos correspondientes.
-\end{itemize}
 
-\end{consigna}
 
 \end{document}
